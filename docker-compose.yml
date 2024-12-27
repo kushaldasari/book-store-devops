@@ -1,0 +1,26 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend
+    restart: always
+    ports:
+      - '5173:5173'
+    networks:
+      - mern_network
+    command: npm run dev -- --host 0.0.0.0
+
+  backend:
+    build: ./backend
+    restart: always
+    ports:
+      - '5000:5000'
+    env_file:
+      - ./backend/.env  # Pointing to the backend .env file
+    volumes:
+      - ./backend/logs:/app/logs
+    networks:
+      - mern_network
+
+networks:
+  mern_network:
+    driver: bridge
