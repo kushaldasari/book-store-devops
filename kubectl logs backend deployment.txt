@@ -1,0 +1,13 @@
+kubectl logs backend-deployment-6c585dbd4b-7dtj8 -n mern-app
+
+
+ansible-playbook palybook-k8.yml -i localhost, --connection=local
+
+ kubectl get svc -n ingress-nginx
+ 1172  kubectl get ingress -n mern-app
+ 
+ kubectl get pods -n mern-app
+ 
+ docker build -t kushaldasari/backend-image:latest .
+ 
+ docker push kushaldasari/frontend-image:latest
